@@ -8,6 +8,7 @@ class AppRouter extends React.Component {
         <div className="main">
           <Switch>
             <Route path="/" component={Dashboard} exact={true} />
+            <Route path="/redirect" component={Dashboard} />
           </Switch>
         </div>
       </BrowserRouter>
