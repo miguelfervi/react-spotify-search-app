@@ -1,6 +1,12 @@
 import React from 'react';
-import Header from './Header/index';
+import Header from './Header';
+import Search from './Search';
 
 export default () => {
-  return <Header />;
+  return (
+    <>
+      <Header />
+      <Search></Search>
+    </>
+  );
 };
