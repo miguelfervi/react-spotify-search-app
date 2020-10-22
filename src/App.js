@@ -1,5 +1,6 @@
 import React from 'react';
+import Header from './Header/index';
 
 export default () => {
-  return <h1>Spotify Search App</h1>;
+  return <Header />;
 };
