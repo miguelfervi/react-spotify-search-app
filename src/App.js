@@ -8,8 +8,8 @@ const AppRouter = () => {
   const [expiryTime, setExpiryTime] = useState(0);
   return (
     <>
-      <Header></Header>
       <BrowserRouter>
+        <Header></Header>
         <Route path="/" component={Home} exact={true} />
         <Route
           path="/redirect"

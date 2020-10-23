@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { signIn, signOut } from '../../actions';
 
 const Dashboard = (props) => {
   useEffect(() => {
@@ -9,11 +11,14 @@ const Dashboard = (props) => {
     localStorage.setItem('params', JSON.stringify(loginData));
     localStorage.setItem('expiry_time', expiryTime);
     setExpiryTime(expiryTime);
+    props.signIn();
   });
+
   return (
     <>
       <div>Dashboard</div>
     </>
   );
 };
-export default Dashboard;
+
+export default connect(null, { signIn, signOut })(Dashboard);

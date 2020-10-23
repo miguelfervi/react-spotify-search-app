@@ -1,10 +1,8 @@
-import history from '../history';
 import { SIGN_IN, SIGN_OUT } from './types';
 
-export const signIn = (userId) => {
+export const signIn = () => {
   return {
     type: SIGN_IN,
-    payload: userId,
   };
 };
 
