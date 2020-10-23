@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
-    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,10 +16,12 @@ body {
 
 .app-title {
   grid-area: a;
-  margin: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  margin: 10px;
+  font-size: revert;
+  padding-top: 17px;
+  padding-bottom: 17px;
   color: #2d3436;
+  padding-leff: 50px;
 }
 
 .btn-login {
@@ -44,6 +44,7 @@ body {
   font-size: 14px;
   border-radius: 2px;
   border: 1px solid #2d3436;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .app-title {
