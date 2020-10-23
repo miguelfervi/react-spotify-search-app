@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { signOut } from '../../actions';
 import { withRouter } from 'react-router-dom';
-
+import './../../index.css';
 const Header = (props) => {
   const {
     REACT_APP_CLIENT_ID,
@@ -23,16 +23,24 @@ const Header = (props) => {
     if (props.isSignedIn === null) {
       return null;
     } else if (props.isSignedIn) {
-      return <button onClick={onSignOutClick}>Log Out</button>;
+      return (
+        <button className="btn-login" onClick={onSignOutClick}>
+          Log Out
+        </button>
+      );
     } else {
-      return <button onClick={handleLogin}>Login</button>;
+      return (
+        <button className="btn-login" onClick={handleLogin}>
+          Login
+        </button>
+      );
     }
   };
 
   return (
     <>
-      <div>
-        <h1>Spotify Search App</h1>
+      <div className="header">
+        <h1 className="app-title">Spotify Search App</h1>
         {renderAuthButton()}
       </div>
     </>

@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Header from './components/Header';
 import Home from './components/Home';
+import './index.css';
 
 const AppRouter = () => {
   const [expiryTime, setExpiryTime] = useState(0);
