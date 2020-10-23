@@ -20,11 +20,7 @@ const Search = () => {
 
   return (
     <>
-      <input
-        className="input"
-        value={term}
-        onChange={(e) => setTerm(e.target.value)}
-      ></input>
+      <input value={term} onChange={(e) => setTerm(e.target.value)}></input>
     </>
   );
 };
