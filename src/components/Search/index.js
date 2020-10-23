@@ -1,6 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { initiateGetResult } from '../../actions';
+
 const Search = (props) => {
   const [term, setTerm] = useState('');
+
+  useEffect(() => {
+    props.initiateGetResult('justin');
+  });
 
   return (
     <>
@@ -9,4 +16,4 @@ const Search = (props) => {
   );
 };
 
-export default Search;
+export default connect(null, { initiateGetResult })(Search);
