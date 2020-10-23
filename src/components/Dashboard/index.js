@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { signIn, signOut } from '../../actions';
+import Search from '../Search';
 
 const Dashboard = (props) => {
   useEffect(() => {
@@ -16,7 +17,7 @@ const Dashboard = (props) => {
 
   return (
     <>
-      <div>Dashboard</div>
+      <Search />
     </>
   );
 };
