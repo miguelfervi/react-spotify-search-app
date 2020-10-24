@@ -18,7 +18,7 @@ export const fetchAlbums = (res) => ({
   payload: res.data.albums,
 });
 
-export const initiateGetResult = (searchTerm) => async (dispatch) => {
+export const fetchData = (term) => async (dispatch) => {
   const config = {
     headers: {
       Authorization: `Bearer ${
@@ -29,7 +29,7 @@ export const initiateGetResult = (searchTerm) => async (dispatch) => {
 
   const res = await axios.get(
     `https://api.spotify.com/v1/search?query=${encodeURIComponent(
-      searchTerm
+      term
     )}&type=album,track,artist`,
     config
   );

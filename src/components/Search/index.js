@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { initiateGetResult, fetchAlbums } from '../../actions';
+import { fetchData, fetchAlbums } from '../../actions';
 import AlbumList from '../../components/AlbumList';
 import '../../index.css';
 
-const Search = ({ initiateGetResult, results, albums }) => {
+const Search = ({ fetchData, results, albums }) => {
   const [term, setTerm] = useState('');
   const [debouncedTerm, setDebouncedTerm] = useState(term);
 
@@ -19,8 +19,8 @@ const Search = ({ initiateGetResult, results, albums }) => {
   }, [term]);
 
   useEffect(() => {
-    if (debouncedTerm) initiateGetResult(debouncedTerm);
-  }, [debouncedTerm, initiateGetResult]);
+    if (debouncedTerm) fetchData(debouncedTerm);
+  }, [debouncedTerm, fetchData]);
 
   return (
     <>
@@ -44,6 +44,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { initiateGetResult, fetchAlbums })(
-  Search
-);
+export default connect(mapStateToProps, { fetchData, fetchAlbums })(Search);

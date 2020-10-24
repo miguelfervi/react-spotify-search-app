@@ -1,12 +1,12 @@
-import { INITIATE_GET_RESULT } from '../actions/types';
+import { FETCH_DATA } from '../actions/types';
 
-const albumsReducer = (state = {}, action) => {
+const resultReducer = (state = {}, action) => {
   switch (action.type) {
-    case INITIATE_GET_RESULT:
+    case FETCH_DATA:
       return { ...state, results: action.payload };
     default:
       return state;
   }
 };
 
-export default albumsReducer;
+export default resultReducer;
