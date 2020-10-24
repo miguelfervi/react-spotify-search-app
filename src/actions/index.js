@@ -44,7 +44,5 @@ export const initiateGetResult = (searchTerm) => async (dispatch) => {
     )}&type=album,track,artist`,
     config
   );
-  console.log(res.data);
-  dispatch(setAlbums(res.data.albums));
   dispatch({ type: INITIATE_GET_RESULT, payload: res.data });
 };

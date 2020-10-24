@@ -1,19 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { initiateGetResult } from '../../actions';
+import AlbumList from '../../components/AlbumList';
 
-const Search = (props) => {
+const Search = ({ initiateGetResult, results }) => {
   const [term, setTerm] = useState('');
 
   useEffect(() => {
-    props.initiateGetResult('justin');
-  });
+    if (term) initiateGetResult(term);
+  }, [term]);
 
   return (
     <>
       <input value={term} onChange={(e) => setTerm(e.target.value)}></input>
+      <AlbumList results={results}></AlbumList>
     </>
   );
 };
 
-export default connect(null, { initiateGetResult })(Search);
+const mapStateToProps = (state) => {
+  return {
+    results: state.results,
+  };
+};
+
+export default connect(mapStateToProps, { initiateGetResult })(Search);
