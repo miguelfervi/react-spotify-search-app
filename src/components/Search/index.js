@@ -6,18 +6,30 @@ import '../../index.css';
 
 const Search = ({ initiateGetResult, results }) => {
   const [term, setTerm] = useState('');
+  const [debouncedTerm, setDebouncedTerm] = useState(term);
 
   useEffect(() => {
-    if (term) initiateGetResult(term);
-  }, [term, initiateGetResult]);
+    const timerId = setTimeout(() => {
+      setDebouncedTerm(term);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [term]);
+
+  useEffect(() => {
+    if (debouncedTerm) initiateGetResult(debouncedTerm);
+  }, [debouncedTerm, initiateGetResult]);
 
   return (
     <>
-      <div className="div1">
+      <div className="container">
         <input
           value={term}
-          className="ant-input"
+          className="search-input"
           onChange={(e) => setTerm(e.target.value)}
+          placeholder="Search for album, artist or track"
         ></input>
         <AlbumList results={results}></AlbumList>
       </div>
