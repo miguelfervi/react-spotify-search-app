@@ -13,9 +13,9 @@ export const signOut = () => {
   };
 };
 
-export const fetchAlbums = (albums) => ({
+export const fetchAlbums = (res) => ({
   type: FETCH_ALBUMS,
-  albums,
+  payload: res.data.albums,
 });
 
 export const initiateGetResult = (searchTerm) => async (dispatch) => {
@@ -33,5 +33,6 @@ export const initiateGetResult = (searchTerm) => async (dispatch) => {
     )}&type=album,track,artist`,
     config
   );
-  dispatch({ type: INITIATE_GET_RESULT, payload: res.data });
+  dispatch({ type: FETCH_ALBUMS, payload: res.data.albums });
+  //dispatch({ type: INITIATE_GET_RESULT, payload: res.data });
 };

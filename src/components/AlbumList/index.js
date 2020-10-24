@@ -1,28 +1,9 @@
 import React from 'react';
 
-const AlbumsList = ({ results }) => {
-  return (
-    <div className="list-view">
-      <div className="card-bordered">
-        <h1>Title</h1>
-        <p>Kappa</p>
-      </div>
-      <div className="card-bordered">
-        <h1>Title</h1>
-        <p>Kappa</p>
-      </div>
-      <div className="card-bordered">
-        <h1>Title</h1>
-        <p>Kappa</p>
-      </div>
-      <div className="card-bordered">
-        <h1>Title</h1>
-        <p>Kappa</p>
-      </div>
+const AlbumsList = ({ albums }) => {
+  if (albums) console.log(albums.items);
 
-      {console.log(results)}
-    </div>
-  );
+  return null;
 };
 
 export default AlbumsList;
