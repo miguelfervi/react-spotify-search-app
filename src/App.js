@@ -16,7 +16,7 @@ const AppRouter = () => {
           path="/"
           exact
           render={(props) => <Home setExpiryTime={setExpiryTime} {...props} />}
-        />{' '}
+        />
         <Route
           path="/redirect"
           render={(props) => (

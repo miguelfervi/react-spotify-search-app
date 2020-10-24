@@ -1,10 +1,4 @@
-import {
-  SIGN_IN,
-  SIGN_OUT,
-  SET_ALBUMS,
-  ADD_ALBUMS,
-  INITIATE_GET_RESULT,
-} from './types';
+import { SIGN_IN, SIGN_OUT, FETCH_ALBUMS, INITIATE_GET_RESULT } from './types';
 import axios from 'axios';
 
 export const signIn = () => {
@@ -19,13 +13,8 @@ export const signOut = () => {
   };
 };
 
-export const setAlbums = (albums) => ({
-  type: SET_ALBUMS,
-  albums,
-});
-
-export const addAlbums = (albums) => ({
-  type: ADD_ALBUMS,
+export const fetchAlbums = (albums) => ({
+  type: FETCH_ALBUMS,
   albums,
 });
 
