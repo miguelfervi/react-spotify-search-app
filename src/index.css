@@ -48,6 +48,14 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.app-title {
-  margin: 10px;
+.div1 {
+  text-align: center;
+}
+.ant-input {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  width: 30%;
+  background: #dfe6e9;
+  margin: 50px;
 }

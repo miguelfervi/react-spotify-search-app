@@ -1,4 +1,4 @@
-import { SET_ALBUMS, ADD_ALBUMS, INITIATE_GET_RESULT } from '../actions/types';
+import { SET_ALBUMS, ADD_ALBUMS } from '../actions/types';
 
 const albumsReducer = (state = {}, action) => {
   const { albums } = action;
