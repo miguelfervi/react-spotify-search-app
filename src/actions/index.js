@@ -1,4 +1,4 @@
-import { SIGN_IN, SIGN_OUT, FETCH_ALBUMS, INITIATE_GET_RESULT } from './types';
+import { SIGN_IN, SIGN_OUT, FETCH_ALBUMS } from './types';
 import axios from 'axios';
 
 export const signIn = () => {

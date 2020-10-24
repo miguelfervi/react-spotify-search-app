@@ -2,8 +2,28 @@ import React from 'react';
 
 const AlbumsList = ({ albums }) => {
   if (albums) console.log(albums.items);
+  const renderAlbumsList = () => {
+    return !albums || albums.items.length === 0 ? (
+      <div>No results</div>
+    ) : (
+      albums.items.map((item, index) => (
+        <div className="card-bordered" key={index}>
+          <a
+            target="_blank"
+            href={item.external_urls.spotify}
+            rel="noopener noreferrer"
+          >
+            <img src={item.images[0].url} alt=""></img>
+          </a>
 
-  return null;
+          <div className="info">{item.name}</div>
+          <div className="info">{item.release_date.split('-')[0]}</div>
+        </div>
+      ))
+    );
+  };
+
+  return <div className="list-view">{renderAlbumsList()}</div>;
 };
 
 export default AlbumsList;

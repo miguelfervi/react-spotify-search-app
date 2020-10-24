@@ -3,7 +3,6 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Header from './components/Header';
 import Home from './components/Home';
-import Footer from './components/Footer';
 import './index.css';
 
 const AppRouter = () => {
@@ -23,7 +22,6 @@ const AppRouter = () => {
             <Dashboard setExpiryTime={setExpiryTime} {...props} />
           )}
         />
-        <Footer></Footer>
       </BrowserRouter>
     </>
   );
