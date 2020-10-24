@@ -68,6 +68,17 @@ body {
   margin: 50px;
   font-family: 'Montserrat', sans-serif;
 }
+.list-view {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 2fr;
+  grid-gap: 10px;
+  grid-template-areas: 'a b c d';
+  height: 130px;
+}
+.card-bordered {
+  border: 1px solid #f0f0f0;
+  margin: 30px;
+}
 
 .footer {
   position: fixed;
