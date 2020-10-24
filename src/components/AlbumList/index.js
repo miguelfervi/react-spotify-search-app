@@ -1,12 +1,12 @@
 import React from 'react';
 
-const AlbumsList = ({ albums }) => {
+const AlbumsList = ({ albums, term }) => {
   if (albums) console.log(albums.items);
   const renderAlbumsList = () => {
-    return !albums || albums.items.length === 0 ? (
-      <div>No results</div>
-    ) : (
-      albums.items.map((item, index) => (
+    if (term === '') return null;
+    else if (!albums || albums.items.length === 0) return <div>No results</div>;
+    else {
+      return albums.items.map((item, index) => (
         <div className="card-bordered" key={index}>
           <a
             target="_blank"
@@ -19,8 +19,8 @@ const AlbumsList = ({ albums }) => {
           <div className="info">{item.name}</div>
           <div className="info">{item.release_date.split('-')[0]}</div>
         </div>
-      ))
-    );
+      ));
+    }
   };
 
   return <div className="list-view">{renderAlbumsList()}</div>;

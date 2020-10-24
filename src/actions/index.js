@@ -34,5 +34,4 @@ export const fetchData = (term) => async (dispatch) => {
     config
   );
   dispatch({ type: FETCH_ALBUMS, payload: res.data.albums });
-  //dispatch({ type: INITIATE_GET_RESULT, payload: res.data });
 };

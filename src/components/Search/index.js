@@ -31,7 +31,7 @@ const Search = ({ fetchData, results, albums }) => {
           onChange={(e) => setTerm(e.target.value)}
           placeholder="Search for album, artist or track"
         ></input>
-        <AlbumList albums={albums}></AlbumList>
+        <AlbumList term={debouncedTerm} albums={albums}></AlbumList>
       </div>
     </>
   );
