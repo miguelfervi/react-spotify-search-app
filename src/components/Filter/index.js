@@ -22,7 +22,6 @@ const Filter = (props) => {
       >
         Tracks
       </button>
-      <div className="title-filter">{props.selectedCategory.toUpperCase()}</div>
     </div>
   );
 };

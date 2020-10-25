@@ -1,5 +1,6 @@
 import React from 'react';
 import NoResults from '../NoResults';
+import unknonw from '../../utils/unknown.jpg';
 
 const AlbumsList = ({ albums, term }) => {
   const renderAlbumsList = () => {
@@ -13,7 +14,10 @@ const AlbumsList = ({ albums, term }) => {
             href={item.external_urls.spotify}
             rel="noopener noreferrer"
           >
-            <img src={item.images[0].url} alt=""></img>
+            <img
+              src={item.images.length > 0 ? item.images[0].url : unknonw}
+              alt=""
+            ></img>
           </a>
 
           <div className="info">{item.name}</div>

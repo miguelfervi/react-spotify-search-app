@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import {
-  fetchData,
-  fetchAlbums,
-  fetchTracks,
-  fetchArtists,
-} from '../../actions';
+import { fetchAlbums, fetchTracks, fetchArtists } from '../../actions';
+
+import { fetchData } from '../../utils/api';
 import AlbumList from '../../components/AlbumList';
 import TracksList from '../../components/TracksList';
 import ArtistsList from '../../components/ArtistsList';
@@ -38,15 +35,24 @@ const Search = ({ fetchData, albums, tracks, artists }) => {
   const renderResult = () => {
     if (selectedCategory === 'albums')
       return (
-        <AlbumList term={debouncedTerm} albums={result.albums}></AlbumList>
+        <AlbumList
+          title={selectedCategory}
+          term={debouncedTerm}
+          albums={result.albums}
+        ></AlbumList>
       );
     else if (selectedCategory === 'tracks')
       return (
-        <TracksList term={debouncedTerm} tracks={result.tracks}></TracksList>
+        <TracksList
+          title={selectedCategory}
+          term={debouncedTerm}
+          tracks={result.tracks}
+        ></TracksList>
       );
     else if (selectedCategory === 'artists')
       return (
         <ArtistsList
+          title={selectedCategory}
           term={debouncedTerm}
           artists={result.artists}
         ></ArtistsList>

@@ -100,17 +100,12 @@ body {
   grid-template-areas: 'a b c d';
   grid-template-rows: auto 1fr auto;
   height: 10px;
+  margin: 20px;
 }
 .card-bordered {
   border: 1px solid #f0f0f0;
   margin: 10px;
   display: block;
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
 
 img {

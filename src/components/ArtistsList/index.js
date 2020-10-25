@@ -1,22 +1,40 @@
 import React from 'react';
 import NoResults from '../NoResults';
+import unknonw from '../../utils/unknown.jpg';
 
-const ArtistsList = ({ artists, term }) => {
+const ArtistsList = ({ artists, term, title }) => {
   console.log(artists);
   const renderArtistsList = () => {
     if (term === '') return null;
     else if (!artists || artists.items.length === 0) return <NoResults />;
     else {
       return artists.items.map((item, index) => (
-        <div key={index}>
-          <div>{`${item.followers.total} followers`}</div>
-          <div>{item.name}</div>
+        <div className="card-bordered" key={index}>
+          <a
+            target="_blank"
+            href={item.external_urls.spotify}
+            rel="noopener noreferrer"
+          >
+            {' '}
+            <img
+              src={item.images.length > 0 ? item.images[0].url : unknonw}
+              alt=""
+            ></img>
+          </a>
+
+          <div className="info">{item.name}</div>
+          <div className="info">{`${item.followers.total} followers`}</div>
         </div>
       ));
     }
   };
 
-  return <div className="list-view">{renderArtistsList()}</div>;
+  return (
+    <div className="title-filter">
+      {title.toUpperCase()}
+      <div className="list-view">{renderArtistsList()}</div>
+    </div>
+  );
 };
 
 export default ArtistsList;
