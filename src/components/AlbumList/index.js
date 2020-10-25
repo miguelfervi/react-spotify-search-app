@@ -1,6 +1,6 @@
 import React from 'react';
 import NoResults from '../NoResults';
-import unknonw from '../../utils/unknown.jpg';
+import unknonw from '../../utils/unknown.png';
 
 const AlbumsList = ({ albums, term, title }) => {
   const renderAlbumsList = () => {
