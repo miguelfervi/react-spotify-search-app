@@ -20,7 +20,7 @@ export const signOut = () => {
 
 export const fetchAlbums = (res) => ({
   type: FETCH_ALBUMS,
-  payload: res.data.albums,
+  payload: res.data,
 });
 
 export const fetchTracks = (res) => ({

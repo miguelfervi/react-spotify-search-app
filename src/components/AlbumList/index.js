@@ -3,6 +3,7 @@ import NoResults from '../NoResults';
 import unknonw from '../../utils/unknown.png';
 
 const AlbumsList = ({ albums, term, title }) => {
+  console.log(albums);
   const renderAlbumsList = () => {
     if (term === '') return null;
     else if (!albums || albums.items.length === 0) return <NoResults />;

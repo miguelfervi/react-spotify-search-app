@@ -83,9 +83,9 @@ const Search = ({ fetchData, albums, tracks, artists }) => {
 
 const mapStateToProps = (state) => {
   return {
-    albums: state.albums.albums,
-    tracks: state.tracks.tracks,
-    artists: state.artists.artists,
+    albums: state.data.albums,
+    tracks: state.data.tracks,
+    artists: state.data.artists,
   };
 };
 

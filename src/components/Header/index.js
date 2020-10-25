@@ -48,7 +48,7 @@ const Header = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  return { isSignedIn: state.auth.isSignedIn };
+  return { isSignedIn: state.data.isSignedIn };
 };
 
 export default connect(mapStateToProps, { signOut })(withRouter(Header));
