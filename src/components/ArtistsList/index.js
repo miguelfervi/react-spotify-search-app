@@ -15,7 +15,6 @@ const ArtistsList = ({ artists, term, title }) => {
             href={item.external_urls.spotify}
             rel="noopener noreferrer"
           >
-            {' '}
             <img
               src={item.images.length > 0 ? item.images[0].url : unknonw}
               alt=""

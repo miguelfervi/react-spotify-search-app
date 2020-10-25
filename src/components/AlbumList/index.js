@@ -2,7 +2,7 @@ import React from 'react';
 import NoResults from '../NoResults';
 import unknonw from '../../utils/unknown.jpg';
 
-const AlbumsList = ({ albums, term }) => {
+const AlbumsList = ({ albums, term, title }) => {
   const renderAlbumsList = () => {
     if (term === '') return null;
     else if (!albums || albums.items.length === 0) return <NoResults />;
@@ -27,7 +27,12 @@ const AlbumsList = ({ albums, term }) => {
     }
   };
 
-  return <div className="list-view">{renderAlbumsList()}</div>;
+  return (
+    <div className="title-filter">
+      {title.toUpperCase()}
+      <div className="list-view">{renderAlbumsList()}</div>
+    </div>
+  );
 };
 
 export default AlbumsList;
