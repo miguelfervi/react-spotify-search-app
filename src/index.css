@@ -48,15 +48,40 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.btn-filter {
+  margin: 10px;
+  min-width: 120px;
+  margin: 10px 10px 10px 30px;
+  top: 30%;
+  color: #2d3436;
+  border-color: #00cec9;
+  line-height: 1.5715;
+  position: relative;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  height: 35px;
+  padding: 4px 30px;
+  font-size: 14px;
+  border-radius: 2px;
+  border: 1px solid #2d3436;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .container {
   text-align: center;
+}
+
+.title-filter {
+  font-size: 20px;
+  margin: 30px;
 }
 
 .search-input {
   padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
-  width: 30%;
+  width: 40%;
   background: #dfe6e9;
   margin: 50px;
   font-family: 'Montserrat', sans-serif;
@@ -95,4 +120,16 @@ img {
 
 .info {
   margin: 10px;
+}
+
+.no-results {
+}
+
+@media screen and (max-width: 768px) {
+  .search-input {
+    width: 90%;
+    margin: 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
 }

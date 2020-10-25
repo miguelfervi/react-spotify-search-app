@@ -1,9 +1,10 @@
 import React from 'react';
+import NoResults from '../NoResults';
 
 const AlbumsList = ({ albums, term }) => {
   const renderAlbumsList = () => {
     if (term === '') return null;
-    else if (!albums || albums.items.length === 0) return <div>No results</div>;
+    else if (!albums || albums.items.length === 0) return <NoResults />;
     else {
       return albums.items.map((item, index) => (
         <div className="card-bordered" key={index}>
