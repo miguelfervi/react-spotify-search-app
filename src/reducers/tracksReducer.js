@@ -1,6 +1,6 @@
 import { FETCH_TRACKS } from '../actions/types';
 
-const tracksReducer = (state = {}, action) => {
+export default (state = {}, action) => {
   switch (action.type) {
     case FETCH_TRACKS:
       return { ...state, tracks: action.payload };
@@ -9,5 +9,3 @@ const tracksReducer = (state = {}, action) => {
       return state;
   }
 };
-
-export default tracksReducer;

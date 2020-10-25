@@ -1,6 +1,6 @@
 import { FETCH_ARTISTS } from '../actions/types';
 
-const artistsReducer = (state = {}, action) => {
+export default (state = {}, action) => {
   switch (action.type) {
     case FETCH_ARTISTS:
       return { ...state, artists: action.payload };
@@ -9,5 +9,3 @@ const artistsReducer = (state = {}, action) => {
       return state;
   }
 };
-
-export default artistsReducer;
