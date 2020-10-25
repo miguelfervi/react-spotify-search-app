@@ -1,7 +1,6 @@
 import React from 'react';
 
 const AlbumsList = ({ albums, term }) => {
-  if (albums) console.log(albums.items);
   const renderAlbumsList = () => {
     if (term === '') return null;
     else if (!albums || albums.items.length === 0) return <div>No results</div>;
