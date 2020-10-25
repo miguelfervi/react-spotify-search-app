@@ -1,7 +1,20 @@
-import { FETCH_ALBUMS, FETCH_TRACKS, FETCH_ARTISTS } from '../actions/types';
 import axios from 'axios';
+import { FETCH_ALBUMS, FETCH_TRACKS, FETCH_ARTISTS } from '../actions/types';
 
-export const fetchData = (term) => async (dispatch) => {
+const setAuthHeader = () => {
+  try {
+    const params = JSON.parse(localStorage.getItem('params'));
+    if (params) {
+      axios.defaults.headers.common[
+        'Authorization'
+      ] = `Bearer ${params.access_token}`;
+    }
+  } catch (error) {
+    console.log('Error setting auth', error);
+  }
+};
+
+const fetchData = (term) => async (dispatch) => {
   const config = {
     headers: {
       Authorization: `Bearer ${
@@ -20,3 +33,5 @@ export const fetchData = (term) => async (dispatch) => {
   dispatch({ type: FETCH_TRACKS, payload: res.data.tracks });
   dispatch({ type: FETCH_ALBUMS, payload: res.data.albums });
 };
+
+export { setAuthHeader, fetchData };
