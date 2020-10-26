@@ -31,6 +31,7 @@ const Search = ({
 
   useEffect(() => {
     if (debouncedTerm) fetchData(debouncedTerm);
+    setSelectedCategory('albums');
   }, [debouncedTerm, fetchData]);
 
   const result = { albums, tracks, artists };
