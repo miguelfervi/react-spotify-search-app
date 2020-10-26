@@ -10,7 +10,7 @@ const AppRouter = () => {
     <>
       <BrowserRouter>
         <Header></Header>
-        <Route path="/" exact render={(props) => <Home {...props} />} />
+        <Route path="/" exact render={<Home />} />
         <Route path="/redirect" render={(props) => <Dashboard {...props} />} />
       </BrowserRouter>
     </>
