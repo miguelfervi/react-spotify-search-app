@@ -24,7 +24,6 @@ export const fetchData = (term) => async (dispatch) => {
   );
   const { albums, artists, tracks } = res.data;
 
-  console.log(res);
   dispatch(fetchAlbums(albums));
   dispatch(fetchArtists(artists));
   dispatch(fetchTracks(tracks));
@@ -45,7 +44,6 @@ export const initiateLoadMoreAlbums = (url) => {
 };
 
 export const initiateLoadMoreTracks = (url) => {
-  console.log('Entro');
   const config = {
     headers: {
       Authorization: `Bearer ${
@@ -55,7 +53,6 @@ export const initiateLoadMoreTracks = (url) => {
   };
   return async (dispatch) => {
     const res = await axios.get(url, config);
-    console.log(res);
 
     dispatch(addTracks(res.data.tracks));
   };
@@ -71,7 +68,6 @@ export const initiateLoadMoreArtists = (url) => {
   };
   return async (dispatch) => {
     const res = await axios.get(url, config);
-    console.log(res.data.artists);
 
     dispatch(addArtists(res.data.artists));
   };

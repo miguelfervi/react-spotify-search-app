@@ -3,7 +3,6 @@ import NoResults from '../NoResults';
 import unknonw from '../../utils/unknown.png';
 
 const TracksList = ({ tracks, term, title, loadMore }) => {
-  console.log(tracks);
   const renderTracksList = () => {
     if (term === '') return null;
     else if (!tracks || tracks.items.length === 0) return <NoResults />;

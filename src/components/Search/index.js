@@ -40,8 +40,6 @@ const Search = ({
     if (debouncedTerm) fetchData(debouncedTerm);
   }, [debouncedTerm, fetchData]);
 
-  const result = { artists };
-
   const renderResult = () => {
     if (selectedCategory === 'albums')
       return (
@@ -57,7 +55,7 @@ const Search = ({
         <TracksList
           title={selectedCategory}
           term={debouncedTerm}
-          tracks={result.tracks}
+          tracks={tracks}
           loadMore={loadMore}
         ></TracksList>
       );
@@ -114,6 +112,7 @@ const mapStateToProps = (state) => {
   return {
     albums: state.albums.albums,
     artists: state.artists.artists,
+    tracks: state.tracks.tracks,
   };
 };
 
