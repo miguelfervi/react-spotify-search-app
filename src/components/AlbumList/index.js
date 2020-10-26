@@ -28,13 +28,21 @@ const AlbumsList = ({ albums, term, title, loadMore }) => {
     }
   };
 
+  const loadMoreButton = () => {
+    if (albums && albums.next)
+      return (
+        <button type="button" onClick={() => loadMore(title)}>
+          Load More
+        </button>
+      );
+    else return null;
+  };
+
   return (
     <div className="title-filter">
       {title.toUpperCase()}
       <div className="list-view">{renderAlbumsList()}</div>
-      <button type="button" onClick={() => loadMore(title)}>
-        Load More
-      </button>
+      {loadMoreButton()}
     </div>
   );
 };

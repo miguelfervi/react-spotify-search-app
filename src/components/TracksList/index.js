@@ -30,13 +30,21 @@ const TracksList = ({ tracks, term, title, loadMore }) => {
     }
   };
 
+  const loadMoreButton = () => {
+    if (tracks && tracks.next)
+      return (
+        <button type="button" onClick={() => loadMore(title)}>
+          Load More
+        </button>
+      );
+    else return null;
+  };
+
   return (
     <div className="title-filter">
       {title.toUpperCase()}
       <div className="list-view">{renderTracksList()}</div>
-      <button type="button" onClick={() => loadMore(title)}>
-        Load More
-      </button>
+      {loadMoreButton()}
     </div>
   );
 };
