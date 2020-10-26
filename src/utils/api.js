@@ -1,15 +1,27 @@
 import axios from 'axios';
 import { addAlbums, fetchAlbums, fetchArtists, fetchTracks } from '../actions';
 
-const config = {
-  headers: {
-    Authorization: `Bearer ${
-      localStorage.getItem('params').split('&')[0].split('=')[1]
-    }`,
-  },
+const setAuthHeader = () => {
+  try {
+    const params = JSON.parse(localStorage.getItem('params'));
+    if (params) {
+      axios.defaults.headers.common[
+        'Authorization'
+      ] = `Bearer ${params.access_token}`;
+    }
+  } catch (error) {
+    console.log('Error setting auth', error);
+  }
 };
 
-const fetchData = (term) => async (dispatch) => {
+export const fetchData = (term) => async (dispatch) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${
+        localStorage.getItem('params').split('&')[0].split('=')[1]
+      }`,
+    },
+  };
   const res = await axios.get(
     `https://api.spotify.com/v1/search?query=${encodeURIComponent(
       term
@@ -23,12 +35,17 @@ const fetchData = (term) => async (dispatch) => {
   dispatch(fetchTracks(tracks));
 };
 
-const initiateLoadMoreAlbums = (url) => {
+export const initiateLoadMoreAlbums = (url) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${
+        localStorage.getItem('params').split('&')[0].split('=')[1]
+      }`,
+    },
+  };
   return async (dispatch) => {
     const res = await axios.get(url, config);
     console.log(res.data.albums);
     dispatch(addAlbums(res.data.albums));
   };
 };
-
-export { fetchData, initiateLoadMoreAlbums };
