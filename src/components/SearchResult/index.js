@@ -79,11 +79,7 @@ const SearchResult = ({
 
   return (
     <>
-      <Filter
-        setCategory={setCategory}
-        selectedCategory={selectedCategory}
-        loadMore={loadMore}
-      ></Filter>
+      <Filter className="container" setCategory={setCategory}></Filter>
       {renderResult()}
     </>
   );

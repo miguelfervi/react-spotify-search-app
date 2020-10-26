@@ -3,7 +3,7 @@ import './../../index.css';
 
 const Filter = (props) => {
   return (
-    <div className="button-group">
+    <div className="btn-group">
       <button
         className="btn-filter"
         onClick={() => props.setCategory('albums')}

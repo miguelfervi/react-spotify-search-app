@@ -38,7 +38,7 @@ const ArtistsList = ({ artists, term, title, loadMore }) => {
   };
 
   return (
-    <div className="title-filter">
+    <div>
       {title.toUpperCase()}
       <div className="list-view">{renderArtistsList()}</div>
       {loadMoreButton()}

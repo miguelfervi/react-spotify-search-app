@@ -41,7 +41,7 @@ const TracksList = ({ tracks, term, title, loadMore }) => {
   };
 
   return (
-    <div className="title-filter">
+    <div>
       {title.toUpperCase()}
       <div className="list-view">{renderTracksList()}</div>
       {loadMoreButton()}

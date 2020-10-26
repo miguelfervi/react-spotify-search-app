@@ -5,7 +5,8 @@ import unknonw from '../../utils/unknown.png';
 const AlbumsList = ({ albums, term, title, loadMore }) => {
   const renderAlbumsList = () => {
     if (term === '') return null;
-    else if (!albums || albums.items.length === 0) return <NoResults />;
+    else if (!albums || albums.items.length === 0)
+      return <NoResults className="list-view" />;
     else {
       return albums.items.map((item, index) => (
         <div className="card-bordered" key={index}>
@@ -38,10 +39,10 @@ const AlbumsList = ({ albums, term, title, loadMore }) => {
   };
 
   return (
-    <div className="title-filter">
-      {title.toUpperCase()}
+    <div>
+      <div className="list-view">{title.toUpperCase()}</div>
       <div className="list-view">{renderAlbumsList()}</div>
-      {loadMoreButton()}
+      <div className="footer">{loadMoreButton()}</div>
     </div>
   );
 };
