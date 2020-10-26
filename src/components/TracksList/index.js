@@ -2,7 +2,7 @@ import React from 'react';
 import NoResults from '../NoResults';
 import unknonw from '../../utils/unknown.png';
 
-const TracksList = ({ tracks, term, title }) => {
+const TracksList = ({ tracks, term, title, loadMore }) => {
   console.log(tracks);
   const renderTracksList = () => {
     if (term === '') return null;
@@ -35,6 +35,9 @@ const TracksList = ({ tracks, term, title }) => {
     <div className="title-filter">
       {title.toUpperCase()}
       <div className="list-view">{renderTracksList()}</div>
+      <button type="button" onClick={() => loadMore(title)}>
+        Load More
+      </button>
     </div>
   );
 };

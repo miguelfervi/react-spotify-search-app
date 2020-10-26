@@ -2,7 +2,7 @@ import React from 'react';
 import NoResults from '../NoResults';
 import unknonw from '../../utils/unknown.png';
 
-const ArtistsList = ({ artists, term, title }) => {
+const ArtistsList = ({ artists, term, title, loadMore }) => {
   const renderArtistsList = () => {
     if (term === '') return null;
     else if (!artists || artists.items.length === 0) return <NoResults />;
@@ -31,6 +31,9 @@ const ArtistsList = ({ artists, term, title }) => {
     <div className="title-filter">
       {title.toUpperCase()}
       <div className="list-view">{renderArtistsList()}</div>
+      <button type="button" onClick={() => loadMore(title)}>
+        Load More
+      </button>
     </div>
   );
 };

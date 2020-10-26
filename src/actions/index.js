@@ -5,6 +5,8 @@ import {
   FETCH_TRACKS,
   FETCH_ARTISTS,
   ADD_ALBUMS,
+  ADD_ARTISTS,
+  ADD_TRACKS,
 } from './types';
 
 export const signIn = () => {
@@ -34,7 +36,17 @@ export const fetchTracks = (tracks) => ({
   payload: tracks,
 });
 
+export const addTracks = (tracks) => ({
+  type: ADD_TRACKS,
+  payload: tracks,
+});
+
 export const fetchArtists = (artists) => ({
   type: FETCH_ARTISTS,
+  payload: artists,
+});
+
+export const addArtists = (artists) => ({
+  type: ADD_ARTISTS,
   payload: artists,
 });

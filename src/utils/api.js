@@ -1,5 +1,12 @@
 import axios from 'axios';
-import { addAlbums, fetchAlbums, fetchArtists, fetchTracks } from '../actions';
+import {
+  addAlbums,
+  addArtists,
+  addTracks,
+  fetchAlbums,
+  fetchArtists,
+  fetchTracks,
+} from '../actions';
 
 export const fetchData = (term) => async (dispatch) => {
   const config = {
@@ -34,5 +41,38 @@ export const initiateLoadMoreAlbums = (url) => {
     const res = await axios.get(url, config);
     console.log(res.data.albums);
     dispatch(addAlbums(res.data.albums));
+  };
+};
+
+export const initiateLoadMoreTracks = (url) => {
+  console.log('Entro');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${
+        localStorage.getItem('params').split('&')[0].split('=')[1]
+      }`,
+    },
+  };
+  return async (dispatch) => {
+    const res = await axios.get(url, config);
+    console.log(res);
+
+    dispatch(addTracks(res.data.tracks));
+  };
+};
+
+export const initiateLoadMoreArtists = (url) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${
+        localStorage.getItem('params').split('&')[0].split('=')[1]
+      }`,
+    },
+  };
+  return async (dispatch) => {
+    const res = await axios.get(url, config);
+    console.log(res.data.artists);
+
+    dispatch(addArtists(res.data.artists));
   };
 };

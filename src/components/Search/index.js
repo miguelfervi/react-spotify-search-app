@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchData, initiateLoadMoreAlbums } from '../../utils/api';
+import {
+  fetchData,
+  initiateLoadMoreAlbums,
+  initiateLoadMoreTracks,
+  initiateLoadMoreArtists,
+} from '../../utils/api';
 import AlbumList from '../../components/AlbumList';
 import TracksList from '../../components/TracksList';
 import ArtistsList from '../../components/ArtistsList';
@@ -14,6 +19,8 @@ const Search = ({
   tracks,
   artists,
   initiateLoadMoreAlbums,
+  initiateLoadMoreArtists,
+  initiateLoadMoreTracks,
 }) => {
   const [term, setTerm] = useState('');
   const [debouncedTerm, setDebouncedTerm] = useState(term);
@@ -74,7 +81,12 @@ const Search = ({
       case 'albums':
         await initiateLoadMoreAlbums(albums.next);
         break;
-
+      case 'artists':
+        await initiateLoadMoreArtists(artists.next);
+        break;
+      case 'tracks':
+        await initiateLoadMoreTracks(tracks.next);
+        break;
       default:
     }
   };
@@ -107,6 +119,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchData, initiateLoadMoreAlbums })(
-  Search
-);
+export default connect(mapStateToProps, {
+  fetchData,
+  initiateLoadMoreAlbums,
+  initiateLoadMoreTracks,
+  initiateLoadMoreArtists,
+})(Search);
