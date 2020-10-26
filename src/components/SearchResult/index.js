@@ -63,7 +63,6 @@ const SearchResult = ({
   };
 
   const loadMore = async (type) => {
-    console.log(albums.next);
     switch (type) {
       case 'albums':
         await initiateLoadMoreAlbums(albums.next);
