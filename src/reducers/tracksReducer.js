@@ -9,10 +9,8 @@ export default (state = { INITIAL_STATE }, action) => {
     case FETCH_TRACKS:
       return { ...state, tracks: action.payload };
     case ADD_TRACKS:
-      let tracks = { ...state };
-      let items = {};
-      items = [...state.tracks.items, ...action.payload.items];
-      tracks.items = items;
+      const tracks = { ...state };
+      tracks.items = [...state.tracks.items, ...action.payload.items];
       tracks.next = action.payload.next;
       return {
         ...state,

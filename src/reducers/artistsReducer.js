@@ -9,10 +9,8 @@ export default (state = { INITIAL_STATE }, action) => {
     case FETCH_ARTISTS:
       return { ...state, artists: action.payload };
     case ADD_ARTISTS:
-      let artists = { ...state };
-      let items = {};
-      items = [...state.artists.items, ...action.payload.items];
-      artists.items = items;
+      const artists = { ...state };
+      artists.items = [...state.artists.items, ...action.payload.items];
       artists.next = action.payload.next;
       return {
         ...state,
