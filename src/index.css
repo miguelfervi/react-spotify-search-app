@@ -10,6 +10,7 @@ body {
   grid-template-areas:
     'header'
     'nav'
+    'new'
     'content'
     'footer';
 }
@@ -39,9 +40,9 @@ body {
 }
 
 .btn-login {
-  width: 40%;
-  justify-items: center;
-  left: 100px;
+  width: 30%;
+  justify-items: right;
+  left: 50%;
   grid-area: b;
   margin: 10px 30px 10px 30px;
   position: relative;
@@ -62,6 +63,7 @@ body {
   border: 1px solid #2d3436;
   font-family: 'Montserrat', sans-serif;
 }
+
 .container {
   grid-area: nav;
   display: grid;
@@ -76,6 +78,18 @@ body {
   justify-items: center;
   padding: 10px;
   font-size: 17px;
+  margin: 50px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.search-input {
+  grid-area: home;
+  width: 70%;
+  padding: 10px;
+  justify-items: center;
+  font-size: 17px;
+  border: 1px solid grey;
+  background: #dfe6e9;
   margin: 50px;
   font-family: 'Montserrat', sans-serif;
 }

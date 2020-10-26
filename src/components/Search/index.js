@@ -19,7 +19,7 @@ const Search = () => {
 
   return (
     <>
-      <div className="container">
+      <>
         <input
           value={term}
           className="search-input"
@@ -27,7 +27,7 @@ const Search = () => {
           placeholder="Search for album, artist or track"
         ></input>
         <SearchResult debouncedTerm={debouncedTerm}></SearchResult>
-      </div>
+      </>
     </>
   );
 };

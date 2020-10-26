@@ -16,7 +16,11 @@ const Dashboard = (props) => {
 
   return (
     <>
-      <Search />
+      <div className="container">
+        <div className="text-centered">
+          <Search />
+        </div>
+      </div>
     </>
   );
 };
