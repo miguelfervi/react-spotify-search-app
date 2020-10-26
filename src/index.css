@@ -96,8 +96,8 @@ body {
 .list-view {
   display: grid;
   height: 80%;
-  grid-template-columns: 2fr 2fr 2fr 2fr;
-  grid-template-areas: 'a b c d';
+  grid-template-columns: repeat(1fr);
+  grid-template-areas: 'a b c d e f';
   grid-template-rows: auto 1fr auto;
   height: 10px;
   margin: 20px;
