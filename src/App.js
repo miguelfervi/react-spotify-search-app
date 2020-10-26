@@ -7,13 +7,13 @@ import './index.css';
 
 const AppRouter = () => {
   return (
-    <>
+    <div className="app">
       <BrowserRouter>
-        <Header></Header>
+        <Header className="header-main"></Header>
         <Route path="/" exact component={Home}></Route>
         <Route path="/redirect" render={(props) => <Dashboard {...props} />} />
       </BrowserRouter>
-    </>
+    </div>
   );
 };
 export default AppRouter;

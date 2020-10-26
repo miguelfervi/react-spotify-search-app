@@ -5,9 +5,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.app {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'nav'
+    'content'
+    'footer';
+}
+
+.header-main {
+  grid-area: header;
+}
+
 .header {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
   grid-auto-rows: 130px;
   grid-template-areas: 'a a b';
@@ -26,7 +39,9 @@ body {
 }
 
 .btn-login {
-  min-width: 120px;
+  width: 40%;
+  justify-items: center;
+  left: 100px;
   grid-area: b;
   margin: 10px 30px 10px 30px;
   position: relative;
@@ -47,81 +62,20 @@ body {
   border: 1px solid #2d3436;
   font-family: 'Montserrat', sans-serif;
 }
-
-.btn-filter {
-  margin: 10px;
-  min-width: 120px;
-  margin: 10px 10px 10px 30px;
-  top: 30%;
-  color: #2d3436;
-  border-color: #00cec9;
-  line-height: 1.5715;
-  position: relative;
-  white-space: nowrap;
-  text-align: center;
-  cursor: pointer;
-  height: 35px;
-  padding: 4px 30px;
-  font-size: 14px;
-  border-radius: 2px;
-  border: 1px solid #2d3436;
-  font-family: 'Montserrat', sans-serif;
-}
-
 .container {
-  text-align: center;
-}
-
-.title-filter {
-  font-size: 20px;
-  margin: 30px;
-}
-
-.search-input {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  width: 40%;
-  background: #dfe6e9;
-  margin: 50px;
-  font-family: 'Montserrat', sans-serif;
+  grid-area: nav;
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-rows: auto;
+  grid-template-areas: '. home .';
 }
 
 .text-centered {
+  grid-area: home;
+  width: 100%;
+  justify-items: center;
   padding: 10px;
   font-size: 17px;
   margin: 50px;
   font-family: 'Montserrat', sans-serif;
-}
-.list-view {
-  display: grid;
-  height: 80%;
-  grid-template-columns: repeat(1fr);
-  grid-template-areas: 'a b c d';
-  grid-template-rows: auto 1fr auto;
-  height: 10px;
-  margin: 20px;
-}
-.card-bordered {
-  border: 1px solid #f0f0f0;
-  margin: 10px;
-  display: block;
-}
-
-img {
-  width: 100%;
-  max-width: 100%;
-}
-
-.info {
-  margin: 10px;
-}
-
-@media screen and (max-width: 768px) {
-  .search-input {
-    width: 90%;
-    margin: 0;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
 }
