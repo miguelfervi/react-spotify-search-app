@@ -10,6 +10,13 @@ const config = {
 };
 
 const fetchData = (term) => async (dispatch) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${
+        localStorage.getItem('params').split('&')[0].split('=')[1]
+      }`,
+    },
+  };
   const res = await axios.get(
     `https://api.spotify.com/v1/search?query=${encodeURIComponent(
       term
@@ -24,6 +31,13 @@ const fetchData = (term) => async (dispatch) => {
 };
 
 const initiateLoadMoreAlbums = (url) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${
+        localStorage.getItem('params').split('&')[0].split('=')[1]
+      }`,
+    },
+  };
   return async (dispatch) => {
     const res = await axios.get(url, config);
     console.log(res.data.albums);
