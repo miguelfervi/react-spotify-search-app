@@ -4,6 +4,7 @@ import {
   FETCH_ALBUMS,
   FETCH_ARTISTS,
   FETCH_TRACKS,
+  ADD_ALBUMS,
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -21,6 +22,15 @@ export default (state = { INITIAL_STATE }, action) => {
       return { ...state, isSignedIn: false };
     case FETCH_ALBUMS:
       return { ...state, albums: action.payload };
+    case ADD_ALBUMS:
+      let albums = { ...state };
+      let items = {};
+      items = [...state.albums.items, ...action.payload.items];
+      albums.items = items;
+      albums.next = action.payload.next;
+      return {
+        albums: { ...albums },
+      };
     case FETCH_ARTISTS:
       return { ...state, artists: action.payload };
     case FETCH_TRACKS:

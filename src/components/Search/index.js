@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchAlbums, fetchTracks, fetchArtists } from '../../actions';
-
-import { fetchData } from '../../utils/api';
+import { fetchData, initiateLoadMoreAlbums } from '../../utils/api';
 import AlbumList from '../../components/AlbumList';
 import TracksList from '../../components/TracksList';
 import ArtistsList from '../../components/ArtistsList';
@@ -10,7 +8,13 @@ import ArtistsList from '../../components/ArtistsList';
 import '../../index.css';
 import Filter from '../Filter';
 
-const Search = ({ fetchData, albums, tracks, artists }) => {
+const Search = ({
+  fetchData,
+  albums,
+  tracks,
+  artists,
+  initiateLoadMoreAlbums,
+}) => {
   const [term, setTerm] = useState('');
   const [debouncedTerm, setDebouncedTerm] = useState(term);
   const [selectedCategory, setSelectedCategory] = useState('albums');
@@ -27,7 +31,6 @@ const Search = ({ fetchData, albums, tracks, artists }) => {
 
   useEffect(() => {
     if (debouncedTerm) fetchData(debouncedTerm);
-    setSelectedCategory('albums');
   }, [debouncedTerm, fetchData]);
 
   const result = { albums, tracks, artists };
@@ -39,6 +42,7 @@ const Search = ({ fetchData, albums, tracks, artists }) => {
           title={selectedCategory}
           term={debouncedTerm}
           albums={result.albums}
+          loadMore={loadMore}
         ></AlbumList>
       );
     else if (selectedCategory === 'tracks')
@@ -47,6 +51,7 @@ const Search = ({ fetchData, albums, tracks, artists }) => {
           title={selectedCategory}
           term={debouncedTerm}
           tracks={result.tracks}
+          loadMore={loadMore}
         ></TracksList>
       );
     else if (selectedCategory === 'artists')
@@ -55,11 +60,22 @@ const Search = ({ fetchData, albums, tracks, artists }) => {
           title={selectedCategory}
           term={debouncedTerm}
           artists={result.artists}
+          loadMore={loadMore}
         ></ArtistsList>
       );
   };
   const setCategory = (category) => {
     setSelectedCategory(category);
+  };
+
+  const loadMore = async (type) => {
+    switch (type) {
+      case 'albums':
+        await initiateLoadMoreAlbums(albums.next);
+        break;
+
+      default:
+    }
   };
 
   return (
@@ -74,6 +90,7 @@ const Search = ({ fetchData, albums, tracks, artists }) => {
         <Filter
           setCategory={setCategory}
           selectedCategory={selectedCategory}
+          loadMore={loadMore}
         ></Filter>
         {renderResult()}
       </div>
@@ -89,9 +106,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {
-  fetchData,
-  fetchAlbums,
-  fetchTracks,
-  fetchArtists,
-})(Search);
+export default connect(mapStateToProps, { fetchData, initiateLoadMoreAlbums })(
+  Search
+);

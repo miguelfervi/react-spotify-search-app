@@ -4,6 +4,7 @@ import {
   FETCH_ALBUMS,
   FETCH_TRACKS,
   FETCH_ARTISTS,
+  ADD_ALBUMS,
 } from './types';
 
 export const signIn = () => {
@@ -18,17 +19,22 @@ export const signOut = () => {
   };
 };
 
-export const fetchAlbums = (res) => ({
+export const fetchAlbums = (albums) => ({
   type: FETCH_ALBUMS,
-  payload: res.data,
+  payload: albums,
 });
 
-export const fetchTracks = (res) => ({
+export const addAlbums = (albums) => ({
+  type: ADD_ALBUMS,
+  payload: albums,
+});
+
+export const fetchTracks = (tracks) => ({
   type: FETCH_TRACKS,
-  payload: res.data.tracks,
+  payload: tracks,
 });
 
-export const fetchArtists = (res) => ({
+export const fetchArtists = (artists) => ({
   type: FETCH_ARTISTS,
-  payload: res.data.artists,
+  payload: artists,
 });
