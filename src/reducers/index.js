@@ -31,6 +31,7 @@ export default (state = { INITIAL_STATE }, action) => {
       albums.items = items;
       albums.next = action.payload.next;
       return {
+        ...state,
         albums: { ...albums },
       };
     case FETCH_ARTISTS:
@@ -42,6 +43,7 @@ export default (state = { INITIAL_STATE }, action) => {
       artists.items = items1;
       artists.next = action.payload.next;
       return {
+        ...state,
         artists: { ...artists },
       };
     case FETCH_TRACKS:
@@ -53,6 +55,7 @@ export default (state = { INITIAL_STATE }, action) => {
       tracks.items = items2;
       tracks.next = action.payload.next;
       return {
+        ...state,
         tracks: { ...tracks },
       };
     default:
