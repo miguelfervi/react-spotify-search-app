@@ -6,12 +6,22 @@ import Home from './components/Home';
 import './index.css';
 
 const AppRouter = () => {
+  const [expiryTime, setExpiryTime] = useState(0);
   return (
     <>
       <BrowserRouter>
         <Header></Header>
-        <Route path="/" exact render={(props) => <Home {...props} />} />
-        <Route path="/redirect" render={(props) => <Dashboard {...props} />} />
+        <Route
+          path="/"
+          exact
+          render={(props) => <Home setExpiryTime={setExpiryTime} {...props} />}
+        />
+        <Route
+          path="/redirect"
+          render={(props) => (
+            <Dashboard setExpiryTime={setExpiryTime} {...props} />
+          )}
+        />
       </BrowserRouter>
     </>
   );
