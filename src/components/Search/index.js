@@ -14,8 +14,8 @@ import '../../index.css';
 import Filter from '../Filter';
 
 const Search = ({
-  fetchData,
   albums,
+  fetchData,
   tracks,
   artists,
   initiateLoadMoreAlbums,
@@ -41,7 +41,7 @@ const Search = ({
     setSelectedCategory('albums');
   }, [debouncedTerm, fetchData]);
 
-  const result = { albums, tracks, artists };
+  const result = { tracks, artists };
 
   const renderResult = () => {
     if (selectedCategory === 'albums')
@@ -49,7 +49,7 @@ const Search = ({
         <AlbumList
           title={selectedCategory}
           term={debouncedTerm}
-          albums={result.albums}
+          albums={albums}
           loadMore={loadMore}
         ></AlbumList>
       );
@@ -113,9 +113,7 @@ const Search = ({
 
 const mapStateToProps = (state) => {
   return {
-    albums: state.data.albums,
-    tracks: state.data.tracks,
-    artists: state.data.artists,
+    albums: state.albums.albums,
   };
 };
 

@@ -24,6 +24,7 @@ export const fetchData = (term) => async (dispatch) => {
   );
   const { albums, artists, tracks } = res.data;
 
+  console.log(res);
   dispatch(fetchAlbums(albums));
   dispatch(fetchArtists(artists));
   dispatch(fetchTracks(tracks));
@@ -39,7 +40,6 @@ export const initiateLoadMoreAlbums = (url) => {
   };
   return async (dispatch) => {
     const res = await axios.get(url, config);
-    console.log(res.data.albums);
     dispatch(addAlbums(res.data.albums));
   };
 };

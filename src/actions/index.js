@@ -1,6 +1,5 @@
 import {
   SIGN_IN,
-  SIGN_OUT,
   FETCH_ALBUMS,
   FETCH_TRACKS,
   FETCH_ARTISTS,
@@ -9,15 +8,10 @@ import {
   ADD_TRACKS,
 } from './types';
 
-export const signIn = () => {
+export const signIn = (isSignedIn) => {
   return {
     type: SIGN_IN,
-  };
-};
-
-export const signOut = () => {
-  return {
-    type: SIGN_OUT,
+    payload: isSignedIn,
   };
 };
 

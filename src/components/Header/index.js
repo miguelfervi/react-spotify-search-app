@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { signOut } from '../../actions';
 import { withRouter } from 'react-router-dom';
 import './../../index.css';
+import { signIn } from '../../actions';
 const Header = (props) => {
   const {
     REACT_APP_CLIENT_ID,
@@ -15,7 +15,7 @@ const Header = (props) => {
   };
 
   const onSignOutClick = () => {
-    props.signOut();
+    props.signIn(false);
     props.history.push('/');
   };
 
@@ -48,7 +48,7 @@ const Header = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  return { isSignedIn: state.data.isSignedIn };
+  return { isSignedIn: state.auth.isSignedIn };
 };
 
-export default connect(mapStateToProps, { signOut })(withRouter(Header));
+export default connect(mapStateToProps, { signIn })(withRouter(Header));
