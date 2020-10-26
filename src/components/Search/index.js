@@ -38,10 +38,9 @@ const Search = ({
 
   useEffect(() => {
     if (debouncedTerm) fetchData(debouncedTerm);
-    setSelectedCategory('albums');
   }, [debouncedTerm, fetchData]);
 
-  const result = { tracks, artists };
+  const result = { artists };
 
   const renderResult = () => {
     if (selectedCategory === 'albums')
@@ -67,7 +66,7 @@ const Search = ({
         <ArtistsList
           title={selectedCategory}
           term={debouncedTerm}
-          artists={result.artists}
+          artists={artists}
           loadMore={loadMore}
         ></ArtistsList>
       );
@@ -114,6 +113,7 @@ const Search = ({
 const mapStateToProps = (state) => {
   return {
     albums: state.albums.albums,
+    artists: state.artists.artists,
   };
 };
 
