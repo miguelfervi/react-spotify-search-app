@@ -7,9 +7,9 @@ import './index.css';
 
 const AppRouter = () => {
   return (
-    <div className="app">
+    <div>
       <BrowserRouter>
-        <Header className="header-main"></Header>
+        <Header className="header"></Header>
         <Route path="/" exact component={Home}></Route>
         <Route path="/redirect" render={(props) => <Dashboard {...props} />} />
       </BrowserRouter>
