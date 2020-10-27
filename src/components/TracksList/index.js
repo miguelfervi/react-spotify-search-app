@@ -31,9 +31,13 @@ const TracksList = ({ tracks, term, title, loadMore }) => {
   };
 
   const loadMoreButton = () => {
-    if (tracks && tracks.next)
+    if (term !== '' && tracks && tracks.next)
       return (
-        <button type="button" onClick={() => loadMore(title)}>
+        <button
+          type="button"
+          className="btn-more"
+          onClick={() => loadMore(title)}
+        >
           Load More
         </button>
       );

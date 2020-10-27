@@ -29,7 +29,7 @@ const AlbumsList = ({ albums, term, title, loadMore }) => {
   };
 
   const loadMoreButton = () => {
-    if (albums && albums.next)
+    if (term !== '' && albums && albums.next)
       return (
         <button
           className="btn-more"

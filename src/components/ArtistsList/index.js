@@ -28,9 +28,13 @@ const ArtistsList = ({ artists, term, title, loadMore }) => {
   };
 
   const loadMoreButton = () => {
-    if (artists && artists.next)
+    if (term !== '' && artists && artists.next)
       return (
-        <button type="button" onClick={() => loadMore(title)}>
+        <button
+          type="button"
+          className="btn-more"
+          onClick={() => loadMore(title)}
+        >
           Load More
         </button>
       );
