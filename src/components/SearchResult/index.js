@@ -6,7 +6,7 @@ import {
   initiateLoadMoreTracks,
   initiateLoadMoreArtists,
 } from '../../utils/api';
-import AlbumList from '../../components/AlbumList';
+import AlbumsList from '../AlbumsList';
 import TracksList from '../../components/TracksList';
 import ArtistsList from '../../components/ArtistsList';
 
@@ -32,12 +32,12 @@ const SearchResult = ({
   const renderResult = () => {
     if (selectedCategory === 'albums')
       return (
-        <AlbumList
+        <AlbumsList
           title={selectedCategory}
           term={debouncedTerm}
           albums={albums}
           loadMore={loadMore}
-        ></AlbumList>
+        ></AlbumsList>
       );
     else if (selectedCategory === 'tracks')
       return (
