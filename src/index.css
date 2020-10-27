@@ -88,7 +88,6 @@ body {
 
 .btn-more {
   width: 150px;
-  margin-right: 50px;
   top: 30%;
   color: #2d3436;
   border-color: #00cec9;
@@ -118,7 +117,6 @@ body {
   margin: 20px;
   display: inline-block;
   max-width: 300px;
-  margin-right: 10px;
   min-height: 380px;
 }
 
