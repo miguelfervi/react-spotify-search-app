@@ -45,11 +45,11 @@ const TracksList = ({ tracks, term, title, loadMore }) => {
   };
 
   return (
-    <div>
+    <>
       {title.toUpperCase()}
       <div className="list-view">{renderTracksList()}</div>
       {loadMoreButton()}
-    </div>
+    </>
   );
 };
 

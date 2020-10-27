@@ -42,11 +42,11 @@ const ArtistsList = ({ artists, term, title, loadMore }) => {
   };
 
   return (
-    <div>
+    <>
       {title.toUpperCase()}
       <div className="list-view">{renderArtistsList()}</div>
       {loadMoreButton()}
-    </div>
+    </>
   );
 };
 
