@@ -6,6 +6,7 @@ import Search from '../Search';
 const Dashboard = (props) => {
   const { location, signIn } = props;
   const loginData = location.hash;
+
   useEffect(() => {
     const expiryTime = new Date().getTime() + loginData.expires_in * 1000;
     localStorage.setItem('params', JSON.stringify(loginData));

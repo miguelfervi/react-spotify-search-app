@@ -27,7 +27,7 @@ const ArtistsList = ({ artists, term, title, loadMore }) => {
     }
   };
 
-  const loadMoreButton = () => {
+  const renderLoadMoreButton = () => {
     if (term !== '' && artists && artists.next)
       return (
         <button
@@ -38,14 +38,13 @@ const ArtistsList = ({ artists, term, title, loadMore }) => {
           Load More
         </button>
       );
-    else return null;
   };
 
   return (
     <>
       {title.toUpperCase()}
       <div className="list-view">{renderArtistsList()}</div>
-      {loadMoreButton()}
+      {renderLoadMoreButton()}
     </>
   );
 };

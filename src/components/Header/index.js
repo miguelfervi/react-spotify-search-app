@@ -29,7 +29,7 @@ const Header = (props) => {
     } else {
       return (
         <button className="btn-login" onClick={handleLogin}>
-          Login
+          Log In
         </button>
       );
     }
