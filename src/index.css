@@ -46,26 +46,24 @@ body {
 }
 
 .search-input {
-  width: 80%;
+  width: 40%;
   padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
   background: #dfe6e9;
-  margin: 50px;
   font-family: 'Montserrat', sans-serif;
 }
 
 .btn-group {
   width: 100%;
-  justify-items: center;
   padding: 10px;
   font-size: 17px;
   font-family: 'Montserrat', sans-serif;
-  margin-left: 10%;
+  margin: 10px;
 }
 
 .btn-filter {
-  width: 20%;
+  width: 120px;
   margin-right: 50px;
   top: 30%;
   color: #2d3436;
