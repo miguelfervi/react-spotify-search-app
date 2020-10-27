@@ -19,15 +19,13 @@ const Search = () => {
 
   return (
     <>
-      <>
-        <input
-          value={term}
-          className="search-input"
-          onChange={(e) => setTerm(e.target.value)}
-          placeholder="Search for album, artist or track"
-        ></input>
-        <SearchResult debouncedTerm={debouncedTerm}></SearchResult>
-      </>
+      <input
+        value={term}
+        className="search-input"
+        onChange={(e) => setTerm(e.target.value)}
+        placeholder="Search for album, artist or track"
+      ></input>
+      <SearchResult debouncedTerm={debouncedTerm}></SearchResult>
     </>
   );
 };
