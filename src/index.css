@@ -86,20 +86,38 @@ body {
   text-align: center;
 }
 
-.list-view {
-  height: 10px;
-  margin: 20px;
+.btn-more {
+  width: 150px;
+  margin-right: 50px;
+  top: 30%;
+  color: #2d3436;
+  border-color: #00cec9;
+  line-height: 1.5715;
+  position: relative;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  height: 35px;
+  padding: 4px 30px;
+  font-size: 14px;
+  border-radius: 2px;
+  border: 1px solid #2d3436;
+  background: #00cec9;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.load-more {
+.list-view {
+  margin: 10px;
+  -webkit-column-count: 5;
+  -moz-column-count: 5;
+  column-count: 5;
 }
 
 .card-bordered {
   border: 1px solid #f0f0f0;
   margin: 20px;
-  display: block;
+  display: inline-block;
   max-width: 300px;
-  float: left;
   margin-right: 10px;
   min-height: 380px;
 }
