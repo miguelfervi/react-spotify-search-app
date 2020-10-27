@@ -20,9 +20,7 @@ const Header = (props) => {
   };
 
   const renderAuthButton = () => {
-    if (props.isSignedIn === null) {
-      return null;
-    } else if (props.isSignedIn) {
+    if (props.isSignedIn) {
       return (
         <button className="btn-login" onClick={onSignOutClick}>
           Log Out
@@ -41,7 +39,7 @@ const Header = (props) => {
     <>
       <div className="header">
         <h1 className="app-title">Spotify Search App</h1>
-        {renderAuthButton()}
+        <div className="wrapper-btn-login">{renderAuthButton()}</div>
       </div>
     </>
   );

@@ -8,6 +8,14 @@ body {
 .header {
   background: #81ecec;
   width: 100%;
+  display: flex;
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    float: none;
+    display: block;
+  }
 }
 
 .app-title {
@@ -16,6 +24,29 @@ body {
   padding: 35px;
   color: #2d3436;
   width: 85%;
+}
+
+@media screen and (max-width: 1000px) {
+  .app-title {
+    text-align: center;
+    margin: 10px;
+    padding: 35px;
+    color: #2d3436;
+    width: 87%;
+  }
+}
+.wrapper-btn-login {
+  text-align: center;
+  width: 300px;
+  padding-top: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+  .wrapper-btn-login {
+    text-align: center;
+    width: 100%;
+    padding-top: 0;
+  }
 }
 
 .btn-login {
@@ -37,6 +68,27 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+@media screen and (max-width: 1000px) {
+  .btn-login {
+    width: 87%;
+    justify-items: right;
+    margin: 10px 30px 10px 30px;
+    color: #2d3436;
+    background: #00cec9;
+    border-color: #00cec9;
+    line-height: 1.5715;
+    white-space: nowrap;
+    text-align: center;
+    cursor: pointer;
+    height: 40px;
+    padding: 4px 30px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 1px solid #2d3436;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
 .text-centered {
   text-align: center;
   padding: 10px;
@@ -45,8 +97,18 @@ body {
   margin: 50px;
 }
 
+@media screen and (max-width: 1000px) {
+  .text-centered {
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 50px;
+  }
+}
+
 .search-input {
-  width: 40%;
+  width: 50%;
   padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
@@ -54,12 +116,33 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+@media screen and (max-width: 1000px) {
+  .search-input {
+    width: 97%;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    background: #dfe6e9;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
 .btn-group {
   margin: 20px;
   width: 100%;
   padding: 10px;
   font-size: 17px;
   font-family: 'Montserrat', sans-serif;
+}
+
+@media screen and (max-width: 1000px) {
+  .btn-group {
+    margin: 20px;
+    display: block;
+    width: 90%;
+    padding: 10px;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+  }
 }
 
 .btn-filter {
@@ -81,9 +164,36 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+@media screen and (max-width: 1000px) {
+  .btn-filter {
+    width: 80%;
+    margin: 10px;
+    top: 30%;
+    color: #2d3436;
+    border-color: #00cec9;
+    line-height: 1.5715;
+    position: relative;
+    white-space: nowrap;
+    text-align: center;
+    cursor: pointer;
+    height: 35px;
+    padding: 4px 30px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 1px solid #2d3436;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
 .title-filter {
   width: 100%;
   text-align: center;
+}
+@media screen and (max-width: 1000px) {
+  .title-filter {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .btn-more {
@@ -112,6 +222,33 @@ body {
   column-count: 5;
 }
 
+@media screen and (min-width: 1600px) {
+  .list-view {
+    margin: 10px;
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-count: 5;
+  }
+}
+
+@media (max-width: 1600px) and (min-width: 1200px) {
+  .list-view {
+    margin: 10px;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 500px) {
+  .list-view {
+    margin: 10px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+
 .card-bordered {
   border: 1px solid #f0f0f0;
   margin: 20px;
@@ -135,4 +272,22 @@ img {
 
 .title-list {
   width: 100%;
+}
+
+.no-result {
+  text-align: center;
+  padding: 10px;
+  font-size: 17px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+  .no-result {
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 50px;
+  }
 }
