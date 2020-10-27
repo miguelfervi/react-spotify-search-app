@@ -55,11 +55,11 @@ body {
 }
 
 .btn-group {
+  margin: 20px;
   width: 100%;
   padding: 10px;
   font-size: 17px;
   font-family: 'Montserrat', sans-serif;
-  margin: 10px;
 }
 
 .btn-filter {
@@ -82,7 +82,6 @@ body {
 }
 
 .title-filter {
-  margin: 20px;
   width: 100%;
   text-align: center;
 }
@@ -93,12 +92,6 @@ body {
 }
 
 .load-more {
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  bottom: 10px;
-
-  margin: 20px;
 }
 
 .card-bordered {
@@ -108,6 +101,7 @@ body {
   max-width: 300px;
   float: left;
   margin-right: 10px;
+  min-height: 380px;
 }
 
 img {

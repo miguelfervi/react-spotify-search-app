@@ -39,11 +39,11 @@ const AlbumsList = ({ albums, term, title, loadMore }) => {
   };
 
   return (
-    <div>
-      <div className="title-filter">{title.toUpperCase()}</div>
+    <>
+      <p className="title-filter">{title.toUpperCase()}</p>
       <div className="list-view">{renderAlbumsList()}</div>
       <div className="load-more">{loadMoreButton()}</div>
-    </div>
+    </>
   );
 };
 
