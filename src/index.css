@@ -197,6 +197,7 @@ body {
 }
 
 .btn-more {
+  margin-top: 20px;
   width: 150px;
   top: 30%;
   color: #2d3436;
