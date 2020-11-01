@@ -248,6 +248,7 @@ body {
   display: inline-block;
   max-width: 300px;
   min-height: 380px;
+  place-self: center;
 }
 
 img {
